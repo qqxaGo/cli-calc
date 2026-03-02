@@ -3,6 +3,7 @@ package helper
 import (
 	"fmt"
 	"math"
+	"math/rand"
 )
 
 func Calculate() string {
@@ -45,13 +46,19 @@ func Calculate() string {
 }
 
 func GuessNumber() string {
+	n := rand.Intn(100)
 	var number int
 	fmt.Println("Введите число от 1 до 100")
-	fmt.Scan(&number)
-	if number == 42 {
-		fmt.Println("Вы угадали число")
-	} else {
-		fmt.Println("Вы не угадали число")
+	for {
+		fmt.Scan(&number)
+		if n == number {
+			fmt.Println("Вы угадали число")
+			break
+		} else if n < number {
+			fmt.Println("Число меньше")
+		} else if n > number {
+			fmt.Println("Число больше")
+		}
 	}
 	return "exit"
 }

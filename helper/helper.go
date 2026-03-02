@@ -55,9 +55,9 @@ func GuessNumber() string {
 			fmt.Println("Вы угадали число")
 			break
 		} else if n < number {
-			fmt.Println("Число меньше")
+			fmt.Println("Загаданное число меньше")
 		} else if n > number {
-			fmt.Println("Число больше")
+			fmt.Println("Загаданное число больше")
 		}
 	}
 	return "exit"
